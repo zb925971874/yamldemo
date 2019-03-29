@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加用户</title>
+</head>
+<body>
+    <form th:action="@{/adduser.html}" method="post">
+        用户名：<input type="text" name="username"/><br><br>
+        用户名密码：<input type="text" name="password"/><br><br>
+        选中用户地址：<select name="address.id">
+        <option th:value="${address.id}" th:each="address:${addresses}">[[${address.addressInfo}]]</option>
+    </select>
+        <input type="submit" th:value="添加"/>
+    </form>
+</body>
+</html>
